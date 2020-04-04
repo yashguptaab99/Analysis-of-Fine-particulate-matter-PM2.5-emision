@@ -21,23 +21,22 @@ PM2.5 Emissions Data (\color{red}{\verb|summarySCC_PM25.rds|}summarySCC_PM25.rds
 20 09001 10200504  PM25-PRI     0.388 POINT 1999
 24 09001 10200602  PM25-PRI     1.490 POINT 1999
 
-
-\color{red}{\verb|fips|}fips: A five-digit number (represented as a string) indicating the U.S. county
-\color{red}{\verb|SCC|}SCC: The name of the source as indicated by a digit string (see source code classification table)
-\color{red}{\verb|Pollutant|}Pollutant: A string indicating the pollutant
-\color{red}{\verb|Emissions|}Emissions: Amount of PM2.5 emitted, in tons
-\color{red}{\verb|type|}type: The type of source (point, non-point, on-road, or non-road)
-\color{red}{\verb|year|}year: The year of emissions recorded
-Source Classification Code Table (\color{red}{\verb|Source_Classification_Code.rds|}Source_Classification_Code.rds): This table provides a mapping from the SCC digit strings in the Emissions table to the actual name of the PM2.5 source. The sources are categorized in a few different ways from more general to more specific and you may choose to explore whatever categories you think are most useful. For example, source “10100101” is known as “Ext Comb /Electric Gen /Anthracite Coal /Pulverized Coal”.
+1)fips: A five-digit number (represented as a string) indicating the U.S. county
+2)SCC: The name of the source as indicated by a digit string (see source code classification table)
+3)Pollutant: A string indicating the pollutant
+4)Emissions: Amount of PM2.5 emitted, in tons
+5)type: The type of source (point, non-point, on-road, or non-road)
+6)year: The year of emissions recorded
 
-You can read each of the two files using the \color{red}{\verb|readRDS()|}readRDS() function in R. For example, reading in each file can be done with the following code:
+Source Classification Code Table(Source_Classification_Code.rds): This table provides a mapping from the SCC digit strings in the Emissions table to the actual name of the PM2.5 source. The sources are categorized in a few different ways from more general to more specific and you may choose to explore whatever categories you think are most useful. For example, source “10100101” is known as “Ext Comb /Electric Gen /Anthracite Coal /Pulverized Coal”.
 
-##This first line will likely take a few seconds. Be patient!
-NEI <- readRDS("summarySCC_PM25.rds")
-SCC <- readRDS("Source_Classification_Code.rds")
+You can read each of the two files using the readRDS() function in R. For example, reading in each file can be done with the following code:
 
-
-as long as each of those files is in your current working directory (check by calling \color{red}{\verb|dir()|}dir() and see if those files are in the listing).
+1.##This first line will likely take a few seconds. Be patient!
+2.NEI <- readRDS("summarySCC_PM25.rds")
+3.SCC <- readRDS("Source_Classification_Code.rds")
+
+as long as each of those files is in your current working directory (check by calling dir() and see if those files are in the listing).
 
 ## Questions to be answered
 
